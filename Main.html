@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Entscheidungsbaum Beispiel</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="case.css">
+</head>
+<body>
+
+
+<!-- Fragen -->
+<div id="fragen">
+    <div id="fragekaufv" style="display: flex; flex-direction: column; align-items: center;">
+        <p>Haben Sie einen wirksamen Kaufvertrag mit einem <dfn title="Def.: Jemand für den das Geschäft zum Betrieb seinen Unternehmens gehört.">Unternehmer</dfn> abgeschlossen?</p>
+        <div style="display: flex; flex-direction: row;">
+            <input type="radio" name="kaufv" value="ja"> Ja&nbsp;&nbsp;
+            <input type="radio" name="kaufv" value="nein"> Nein&nbsp;&nbsp;
+        </div>
+        <button onclick="kaufvertrag()">Weiter</button>
+    </div>
+
+    <div id="fragedatum" style="display:none">
+        <p>Haben sie diesen Vertrag nach dem 31.12.2021 abgeschlossen? (§ 29 Abs 2 VGG)</p>
+        <input type="radio" name="vor31" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="vor31" value="nein"> Nein&nbsp;&nbsp;
+        <!-- <input type="radio" name="vor31" value="vielleicht"> Vielleicht<br> -->
+        <button onclick="datum()">Weiter</button>
+    </div>
+    <div id="frageentgelt" style="display:none">
+        <p>Haben Sie einen entgeltlichen Vertrag abgeschlossen? Darunter fallen Kaufverträge und auch Verträge über die Bereitstellung digitaler Leistungen bei denen Sie dem Unternehmer personenbezogene Daten zur Verfügung stellen (§ 1 Abs 1 VGG). Schenkungen sind hiervon nicht erfasst.</p>
+        <input type="radio" name="entgeltl" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="entgeltl" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="entgeltlich()">Weiter</button>
+    </div>
+    <div id="fragebewegl" style="display:none">
+        <p>Haben sie einen Vertrag über bewegliche Waren (zb Handy, Fernseher, Tisch etc.) abgeschlossen? Erfasst sind auch die Montage oder Installation von Waren (§ 1 Abs 1 Z 1 VGG). Nicht erfasst sind Werkverträge.</p>
+        <input type="radio" name="bewegl" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="bewegl" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="beweglich()">Weiter</button>
+    </div>
+    <div id="fragezwangsv" style="display:none">
+        <p>Handelt es sich bei der beweglichen Sache um eine Ware, die aufgrund von Zwangsvollstreckungsmaßnahmen oder anderen gerichtlichen Maßnahmen verkauft wurde (§ 1 Abs 2 Z 10 VGG)? </p>
+        <input type="radio" name="zwangsv" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="zwangsv" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="zwangsvollstreckung()">Weiter</button>
+    </div>
+    <div id="fragedigitL" style="display:none">
+        <p>Haben sie einen Vertrag über digitale Leistungen (zB Software, Videospiele) abgeschlossen (§ 2 Z 1 VGG) </p>
+        <input type="radio" name="digitL" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="digitL" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="digitaleLeistung()">Weiter</button>
+    </div>
+    <div id="fragewareueberg" style="display:none">
+        <p>Wurde Ihnen die Ware bereits übergeben? </p>
+        <input type="radio" name="wareueberg" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="wareueberg" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="uebergeben()">Weiter</button>
+    </div>
+    <div id="frageopensrc" style="display:none">
+        <p>Handelt es sich um Software, die der Unternehmer im Rahmen einer freien und quelloffenen Lizenz anbietet, sofern Sie keine Zahlung geleistet haben und die von Ihnen hingegebenen personenbezogenen Daten durch den Unternehmer ausschließlich zur Verbesserung der Sicherheit, der Kompatibilität oder der Interoperabilität dieser speziellen Software verarbeitet werden (Open Source) oder um Finanzdienstleistungen oder um Glücksspieldienstleistungen oder um Gesundheitsdienstleistungen oder um elektronische Kommunikationsdienste (Ausnahmen nach § 1 Abs 2 Z 3-7 VGG)?</p>
+        <input type="radio" name="opensrc" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="opensrc" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="opensource()">Weiter</button>
+    </div>
+    <div id="fragebeweglS" style="display:none">
+        <p>Haben Sie einen Vertrag über eine bewegliche Sache abgeschlossen (zB Liegenschaften, Grundstücke, Eigentumswohnnungen)?</p>
+        <input type="radio" name="beweglS" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="beweglS" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="beweglicheSache()">Weiter</button>
+    </div>
+    <div id="frageWaremdLeistung" style="display:none">
+        <p>Handelt es sich dabei um eine Ware mit digitalen Leistungen? Hinweis: Waren mit digitalen Leistungen sind bewegliche körperliche Sachen, die ihre Funktionen ohne die in ihnen enthaltenen oder mit ihnen verbundenen digitalen Leistungen nicht erfüllen können.</p>
+        <input type="radio" name="wmdL" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="wmdL" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="waremdLeistung()">Weiter</button>
+    </div>
+    <div id="fragewaremangelheigensch" style="display:none">
+        <p>Ist die Ware mangelhaft? Hinweis: Eine Ware ist dann mangelhaft wenn sie eben nicht die gewöhnlich vorausgesetzten Eigenschaften bzw nicht die vertraglich zugesicherten Eigenschaften entspricht (§4 VGG).  </p>
+        <input type="radio" name="eigensch" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="eigensch" value="nein">Nein&nbsp;&nbsp;
+        <button onclick="eigenschaften()">Weiter</button>
+    </div>
+    <div id="fragemangelbeiuebergabe" style="display:none">
+        <p>Denken Sie, dass der Mangel bereits bei Übergabe vorlag oder angelegt war? Hinweis: Wenn der Mangel innerhalb eines Jahres nach der Übergabe hervorkommt, wird vermutet, dass er bereits bei Übergabe vorgelegen ist (§ 11 Abs 1 VGG).  </p>
+        <input type="radio" name="mangelbuebergabe" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="mangelbuebergabe" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="mangelbeiuebergabe()">Weiter</button>
+    </div>
+    <div id="fragemangel2anachuebergabe" style="display:none">
+        <p>Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?</p>
+        <input type="radio" name="mangel2anueb" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="mangel2anueb" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="mangel2anachuebergabe()">Weiter</button>
+    </div>
+    <div id="fragegebraucht" style="display:none">
+        <p>Wurde die Ware im gebrauchten Zustand gekauft und wurde eine verkürzte Gewährleistungsfrist vereinbarte (Mindestens ein Jahr) und Ist diese vertraglich vereinbarte Frist bereits verstrichen? (§ 10 Abs 4 VGG) </p>
+        <input type="radio" name="gebraucht" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="gebraucht" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="waregebraucht()">Weiter</button>
+    </div>
+    <div id="fragegebrauchtu2aplus" style="display:none">
+        <p> Sind seit dem Zeitpunkt der Übergabe mehr als zwei Jahre und drei Monate vergangen (§ 28 Abs 1 VGG)? Hinweis: Bei gebrauchten Waren mit verkürzter Frist mindestens ein Jahr und drei Monate. </p>
+        <input type="radio" name="gebrauchtundalt" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="gebrauchtundalt" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="gebrauchtu2aplus()">Weiter</button>
+    </div>
+    <div id="fragedigmangel" style="display:none">
+        <p>Ist der digitale Tiel der Leistung mangelhaft? Hinweis: Eine Ware ist dann mangelhaft wenn sie eben nicht die gewöhnlich vorausgesetzten Eigenschaften bzw nicht die vertraglich zugesicherten Eigenschaften entspricht (§4 VGG). </p>
+        <input type="radio" name="digmang" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="digmang" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="digitalmangelhaft()">Weiter</button>
+    </div>
+    <div id="frageaktualispfdigL" style="display:none">
+        <p>Besteht eine Aktualisierungspflicht für die digitale Leistung (§ 7 VGG) und ist der Unternehmer der Pflicht nicht nachgekommen? </p>
+        <input type="radio" name="aktualpfdigL" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="aktualpfdigL" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="aktualisierungspflichtdigL()">Weiter</button>
+    </div>
+    <div id="fragemangelwbereitstellung" style="display:none">
+        <p>Kommt der Mangel während der Bereitstellung des digitalen Elements durch den Unternehmer hervor? </p>
+        <input type="radio" name="mwbdL" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="mwbdL" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="mangelwabereitstellungdigL()">Weiter</button>
+    </div>
+    <div id="fragedigLmangelhaft" style="display:none">
+        <p>Ist die digitale Leistung mangelhaft? Hinweis: Eine digitale Leistung ist dann mangelhaft, wenn sie eben nicht die gewöhnlich vorausgesetzten Eigenschaften bzw nicht die vertraglich zugesicherten Eigenschaften entspricht (§ 4 VGG).</p>
+        <input type="radio" name="dLm" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="dLm" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="digLeistungmangelhaft()">Weiter</button>
+    </div>
+    <div id="fragelebendTier" style="display:none">
+        <p>Haben Sie ein lebendiges Tier gekauft, welches als Nutztier in der Landwirtschaft genützt wird?</p>
+        <input type="radio" name="tier" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="tier" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="lebendigesTier()">Weiter</button>
+    </div>
+    <div id="frageTierkrank" style="display:none">
+        <p>Ist das Tier krank?</p>
+        <input type="radio" name="krank" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="krank" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="tierkrank()">Weiter</button>
+    </div>
+    <div id="fragetier2a" style="display:none">
+        <p>Ist der Mangel innerhalb von zwei Jahren nach Übergabe des Tieres aufgetreten? (§9 Abs 2 KSchG iVm § 933 Abs 2 ABGB).</p>
+        <input type="radio" name="T2a" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="T2a" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="tier2a()">Weiter</button>
+    </div>
+    <div id="frage1bzw2" style="display:none">
+        <p>Ist die digitale Leistung nach dem Vertrag einmal bzw mehrmals bereitzustellen? </p>
+        <input type="radio" name="1bzw2bereit" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="1bzw2bereit" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="bereitstellung1bzw2()">Weiter</button>
+    </div>
+    <div id="frageaktualisierungspflicht" style="display:none">
+        <p>Besteht eine Aktualisierungspflicht für die digitale Leistung (§ 7 VGG) und ist der Unternehmer der Pflicht nicht nachgekommen? </p>
+        <input type="radio" name="aktualpfl" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="aktualpfl" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="aktualisierungspflicht()">Weiter</button>
+    </div>
+    <div id="fragebestzeit" style="display:none">
+        <p>Ist die digitale Leistung nach dem Vertrag über einen bestimmten oder unbestimmten Zeitraum bereitzustellen?</p>
+        <input type="radio" name="bestzeit" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="bestzeit" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="bestimmteZeit()">Weiter</button>
+    </div>
+    <div id="fragemangelvor" style="display:none">
+        <p>Denken Sie, dass der Mangel bereits bei Bereitstellung durch den Unternehmer vorlag oder angelegt war? Hinweis: Wenn der Mangel innerhalb eines Jahres nach der Übergabe hervorkommt, wird vermutet, dass er bereits bei Übergabe vorgelegen ist (§ 19 Abs 1 VGG). </p>
+        <input type="radio" name="mangelvor" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="mangelvor" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="mangelvorkauf()">Weiter</button>
+    </div>
+    <div id="fragemangelwB" style="display:none">
+        <p>Kommt der Mangel während der Bereitstellung durch den Unternehmer hervor (§ 18 Abs 2 VGG)?</p>
+        <input type="radio" name="mwB" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="mwB" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="mangelwBereitstellung()">Weiter</button>
+    </div>
+    <div id="fragemangeliv2a" style="display:none">
+        <p>Ist der Mangel innerhalb von zwei Jahren nach Bereitstellung durch den Unternehmer hervorgekommen (§ 18 Abs 1 VGG)?</p>
+        <input type="radio" name="miv2a" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="miv2a" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="mangelv2a()">Weiter</button>
+    </div>
+    <div id="frage2au3m" style="display:none">
+        <p>Sind seit dem Zeitpunkt der Bereitstellung mehr als zwei Jahre und drei Monate vergangen (§ 28 Abs 1 VGG)?</p>
+        <input type="radio" name="2au3m" value="ja"> Ja&nbsp;&nbsp;
+        <input type="radio" name="2au3m" value="nein"> Nein&nbsp;&nbsp;
+        <button onclick="zweijahreund3monate()">Weiter</button>
+    </div>
+</div>
+    <!-- Ausgaben sprich Blätter als HTML-->
+    <div id="ergebnis" style="display:none">
+        <p>Vielen Dank für Ihre Antworten. Basierend auf Ihren Angaben empfehlen wir Ihnen Folgendes:</p>
+        <p id="empfehlung"></p> <!-- hier kann man eine personalisierte message ausgeben. Bsp: nächste Zeile:
+  document.getElementById("empfehlung").innerHTML = "Sie sollten sich für einen Job mit besserem Einkommen bewerben."; -->
+    </div>
+
+    <script>
+        let kaufvAntwort = "";
+        let vor31Antwort = "";
+        let entgeltlAntwort = "";
+        let beweglAntwort = "";
+        let zwangsvAntwort = "";
+        let digitLAntwort = "";
+        let wareuebergAntwort = "";
+        let opensrcAntwort = "";
+        let beweglSAntwort = "";
+        let wmdLAntwort = "";
+        let dLmAntwort = "";
+        let tierAntwort = "";
+        let krankAntwort = "";
+        let T2aAntwort = "";
+        let aktualpflAntwort = "";
+        let frage1bzw2Antwort = "";
+        let bestzeitAntwort = "";
+        let mwBAntwort = "";
+        let mangelvorAntwort = "";
+        let miv2aAntwort = "";
+        let twoau3mAntwort = "";
+        let digmangAntwort = "";
+        let aktualpfdigLAntwort = "";
+        let mwbdLAntwort = "";
+        let eigenschAntwort = "";
+        let mangelbuebergabeAntwort = "";
+        let mangel2anuebAntwort = "";
+        let gebrauchtAntwort = "";
+        let gebrauchtundaltAntwort = "";
+
+
+        function kaufvertrag() {
+            kaufvAntwort = document.querySelector('input[name="kaufv"]:checked').value;
+
+            if (kaufvAntwort == "ja") {
+                document.getElementById("fragekaufv").style.display = "none";
+                document.getElementById("fragedatum").style.display = "block";
+            } else if (kaufvAntwort == "nein") {
+                window.location.href = 'VGG.html';
+            } <!-- fuer mehr Moeglichkeiten: else if (ersteFrageAntwort == "nein" || ersteFrageAntwort == "alt") -->
+        }
+        function datum() {
+            vor31Antwort = document.querySelector('input[name="vor31"]:checked').value;
+
+            if (vor31Antwort == "ja") {
+                document.getElementById("fragedatum").style.display = "none";
+                document.getElementById("frageentgelt").style.display = "block";
+            } else if (vor31Antwort == "nein") {
+                window.location.href = 'ABGB.html';
+            }
+        }
+        function entgeltlich() {
+            entgeltlAntwort = document.querySelector('input[name="entgeltl"]:checked').value;
+
+            if (entgeltlAntwort == "ja") {
+                document.getElementById("frageentgelt").style.display = "none";
+                document.getElementById("fragebewegl").style.display = "block";
+            } else if (entgeltlAntwort == "nein") {
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function beweglich() {
+            beweglAntwort = document.querySelector('input[name="bewegl"]:checked').value;
+
+            if (beweglAntwort == "ja") {
+                document.getElementById("fragebewegl").style.display = "none";
+                document.getElementById("fragezwangsv").style.display = "block";
+            } else if (beweglAntwort == "nein") {
+                document.getElementById("fragebewegl").style.display = "none";
+                document.getElementById("fragedigitL").style.display = "block";
+            }
+        }
+        function zwangsvollstreckung() {
+            zwangsvAntwort = document.querySelector('input[name="zwangsv"]:checked').value;
+
+            if (zwangsvAntwort == "ja") {
+                document.getElementById("fragezwangsv").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            } else if (zwangsvAntwort == "nein") {
+                document.getElementById("fragezwangsv").style.display = "none";
+                document.getElementById("fragewareueberg").style.display = "block";
+            }
+        }
+        function digitaleLeistung() {
+            digitLAntwort = document.querySelector('input[name="digitL"]:checked').value;
+
+            if (digitLAntwort == "ja") {
+                document.getElementById("fragedigitL").style.display = "none";
+                document.getElementById("frageopensrc").style.display = "block";
+            } else if (digitLAntwort == "nein") {
+                document.getElementById("fragedigitL").style.display = "none";
+                document.getElementById("fragebeweglS").style.display = "block";
+            }
+        }
+        function uebergeben() {
+            wareuebergAntwort = document.querySelector('input[name="wareueberg"]:checked').value;
+
+            if (wareuebergAntwort == "ja") {
+                document.getElementById("fragewareueberg").style.display = "none";
+                document.getElementById("frageWaremdLeistung").style.display = "block";
+            } else if (wareuebergAntwort == "nein") {
+                document.getElementById("fragewareueberg").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function opensource() {
+            opensrcAntwort = document.querySelector('input[name="opensrc"]:checked').value;
+
+            if (opensrcAntwort == "ja") {
+                document.getElementById("frageopensrc").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            } else if (opensrcAntwort == "nein") {
+                document.getElementById("frageopensrc").style.display = "none";
+                document.getElementById("fragedigLmangelhaft").style.display = "block";
+            }
+        }
+        function beweglicheSache() {
+            beweglSAntwort = document.querySelector('input[name="beweglS"]:checked').value;
+
+            if (beweglSAntwort == "ja") {
+                document.getElementById("fragebeweglS").style.display = "none";
+                window.location.href = 'ABGB.html';
+            } else if (beweglSAntwort == "nein") {
+                document.getElementById("fragebeweglS").style.display = "none";
+                document.getElementById("fragelebendTier").style.display = "block";
+            }
+        }
+        function lebendigesTier() {
+            tierAntwort = document.querySelector('input[name="tier"]:checked').value;
+
+            if (tierAntwort == "ja") {
+                document.getElementById("fragelebendTier").style.display = "none";
+                document.getElementById("frageTierkrank").style.display = "block";
+
+            } else if (tierAntwort == "nein") {
+                document.getElementById("fragelebendTier").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function tierkrank() {
+            krankAntwort = document.querySelector('input[name="krank"]:checked').value;
+
+            if (krankAntwort == "ja") {
+                document.getElementById("frageTierkrank").style.display = "none";
+                document.getElementById("fragetier2a").style.display = "block";
+            } else if (krankAntwort == "nein") {
+                document.getElementById("frageTierkrank").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function tier2a() {
+            T2aAntwort = document.querySelector('input[name="T2a"]:checked').value;
+
+            if (T2aAntwort == "ja") {
+                document.getElementById("fragetier2a").style.display = "none";
+                window.location.href = 'Anspruch.html';
+            } else if (T2aAntwort == "nein") {
+                document.getElementById("fragetier2a").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function waremdLeistung() {
+            wmdLAntwort = document.querySelector('input[name="wmdL"]:checked').value;
+
+            if (wmdLAntwort == "ja") {
+                document.getElementById("frageWaremdLeistung").style.display = "none";
+                document.getElementById("fragedigmangel").style.display = "block";
+            } else if (wmdLAntwort == "nein") {
+                document.getElementById("frageWaremdLeistung").style.display = "none";
+                document.getElementById("fragewaremangelheigensch").style.display = "block";
+            }
+        }
+        function eigenschaften() {
+            eigenschAntwort = document.querySelector('input[name="eigensch"]:checked').value;
+
+            if (eigenschAntwort == "ja") {
+                document.getElementById("fragewaremangelheigensch").style.display = "none";
+                document.getElementById("fragemangelbeiuebergabe").style.display = "block";
+            } else if (eigenschAntwort == "nein") {
+                document.getElementById("fragewaremangelheigensch").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function mangelbeiuebergabe() {
+            mangelbuebergabeAntwort = document.querySelector('input[name="mangelbuebergabe"]:checked').value;
+
+            if (mangelbuebergabeAntwort == "ja") {
+                document.getElementById("fragemangelbeiuebergabe").style.display = "none";
+                document.getElementById("fragemangel2anachuebergabe").style.display = "block";
+            } else if (mangelbuebergabeAntwort == "nein") {
+                document.getElementById("fragemangelbeiuebergabe").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function mangel2anachuebergabe() {
+            mangel2anuebAntwort = document.querySelector('input[name="mangel2anueb"]:checked').value;
+
+            if (mangel2anuebAntwort == "ja") {
+                document.getElementById("fragemangel2anachuebergabe").style.display = "none";
+                document.getElementById("fragegebraucht").style.display = "block";
+            } else if (mangel2anuebAntwort == "nein") {
+                document.getElementById("fragemangel2anachuebergabe").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function waregebraucht() {
+            gebrauchtAntwort = document.querySelector('input[name="gebraucht"]:checked').value;
+
+            if (gebrauchtAntwort == "ja") {
+                document.getElementById("fragegebraucht").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            } else if (gebrauchtAntwort == "nein") {
+                document.getElementById("fragegebraucht").style.display = "none";
+                document.getElementById("fragegebrauchtu2aplus").style.display = "block";
+            }
+        }
+        function gebrauchtu2aplus() {
+            gebrauchtundaltAntwort = document.querySelector('input[name="gebrauchtundalt"]:checked').value;
+
+            if (gebrauchtundaltAntwort == "ja") {
+                document.getElementById("fragegebrauchtu2aplus").style.display = "none";
+                document.getElementById("message2").style.display = "block";
+                window.location.href = 'keineGewaehrleistung.html';
+            } else if (gebrauchtundaltAntwort == "nein") {
+                document.getElementById("fragegebrauchtu2aplus").style.display = "none";
+                window.location.href = 'Anspruch.html';
+            }
+        }
+        function digitalmangelhaft() {
+            digmangAntwort = document.querySelector('input[name="digmang"]:checked').value;
+
+            if (digmangAntwort == "ja") {
+                document.getElementById("fragedigmangel").style.display = "none";
+                document.getElementById("fragemangelwbereitstellung").style.display = "block";
+            } else if (digmangAntwort == "nein") {
+                document.getElementById("fragedigmangel").style.display = "none";
+                document.getElementById("frageaktualispfdigL").style.display = "block";
+            }
+        }
+        function aktualisierungspflichtdigL() {
+            aktualpfdigLAntwort = document.querySelector('input[name="aktualpfdigL"]:checked').value;
+
+            if (aktualpfdigLAntwort == "ja") {
+                document.getElementById("frageaktualispfdigL").style.display = "none";
+                document.getElementById("fragemangelwbereitstellung").style.display = "block";
+            } else if (aktualpfdigLAntwort == "nein") {
+                document.getElementById("frageaktualispfdigL").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function mangelwabereitstellungdigL() {
+            mwbdLAntwort = document.querySelector('input[name="mwbdL"]:checked').value;
+
+            if (mwbdLAntwort == "ja") {
+                document.getElementById("fragemangelwbereitstellung").style.display = "none";
+                window.location.href = 'Anspruch.html';
+            } else if (mwbdLAntwort == "nein") {
+                document.getElementById("fragemangelwbereitstellung").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function digLeistungmangelhaft() {
+            dLmAntwort = document.querySelector('input[name="dLm"]:checked').value;
+
+            if (dLmAntwort == "ja") {
+                document.getElementById("fragedigLmangelhaft").style.display = "none";
+                document.getElementById("frage1bzw2").style.display = "block";
+            } else if (dLmAntwort == "nein") {
+                document.getElementById("fragedigLmangelhaft").style.display = "none";
+                document.getElementById("frageaktualisierungspflicht").style.display = "block";
+            }
+        }
+        function aktualisierungspflicht() {
+            aktualpflAntwort = document.querySelector('input[name="aktualpfl"]:checked').value;
+
+            if (aktualpflAntwort == "ja") {
+                document.getElementById("frageaktualisierungspflicht").style.display = "none";
+                document.getElementById("frage1bzw2").style.display = "block";
+            } else if (aktualpflAntwort == "nein") {
+                document.getElementById("frageaktualisierungspflicht").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function bereitstellung1bzw2() {
+            frage1bzw2Antwort = document.querySelector('input[name="1bzw2bereit"]:checked').value;
+
+            if (frage1bzw2Antwort == "ja") {
+                document.getElementById("frage1bzw2").style.display = "none";
+                document.getElementById("fragemangelvor").style.display = "block";
+            } else if (frage1bzw2Antwort == "nein") {
+                document.getElementById("frage1bzw2").style.display = "none";
+                document.getElementById("fragebestzeit").style.display = "block";
+            }
+        }
+        function bestimmteZeit() {
+            bestzeitAntwort = document.querySelector('input[name="bestzeit"]:checked').value;
+
+            if (bestzeitAntwort == "ja") {
+                document.getElementById("fragebestzeit").style.display = "none";
+                document.getElementById("fragemangelwB").style.display = "block";
+            } else if (bestzeitAntwort == "nein") {
+                document.getElementById("fragebestzeit").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function mangelwBereitstellung() {
+            mwBAntwort = document.querySelector('input[name="mwB"]:checked').value;
+
+            if (mwBAntwort == "ja") {
+                document.getElementById("fragemangelwB").style.display = "none";
+                window.location.href = 'Anspruch.html';
+            } else if (mwBAntwort == "nein") {
+                document.getElementById("fragemangelwB").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function mangelvorkauf() {
+            mangelvorAntwort = document.querySelector('input[name="mangelvor"]:checked').value;
+
+            if (mangelvorAntwort == "ja") {
+                document.getElementById("fragemangelvor").style.display = "none";
+                document.getElementById("fragemangeliv2a").style.display = "block";
+            } else if (mangelvorAntwort == "nein") {
+                document.getElementById("fragemangelvor").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function mangelv2a() {
+            miv2aAntwort = document.querySelector('input[name="miv2a"]:checked').value;
+
+            if (miv2aAntwort == "ja") {
+                document.getElementById("fragemangeliv2a").style.display = "none";
+                document.getElementById("frage2au3m").style.display = "block";
+            } else if (miv2aAntwort == "nein") {
+                document.getElementById("fragemangeliv2a").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            }
+        }
+        function zweijahreund3monate() {
+            twoau3mAntwort = document.querySelector('input[name="2au3m"]:checked').value;
+
+            if (twoau3mAntwort == "ja") {
+                document.getElementById("frage2au3m").style.display = "none";
+                window.location.href = 'keineGewaehrleistung.html';
+            } else if (twoau3mAntwort == "nein") {
+                document.getElementById("frage2au3m").style.display = "none";
+                window.location.href = 'Anspruch.html';
+            }
+        }
+    </script>
+</body>
+</html>
