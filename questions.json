@@ -1,15 +1,25 @@
 [
   {
     "id": "1",
-    "text": "Haben Sie einen wirksamen Kaufvertrag <dfn title=\"#dfn-canine\">canine</dfn> mit einem Unternehmer abgeschlossen?",
+    "text": "Haben Sie einen #dfn-wirksamer mit einem #dfn-unternehmer abgeschlossen?",
+    "definedTerms": [
+      {
+        "id": "dfn-unternehmer",
+        "text": "Unternehmer"
+      },
+      {
+        "id": "dfn-wirksamer",
+        "text": "Kaufvertrag"
+      }
+    ],
     "options": [
       {
-        "text": "Option 1",
+        "text": "Ja",
         "value": "yes",
         "next": "2"
       },
       {
-        "text": "Option 2",
+        "text": "Nein",
         "value": "no",
         "next": "VGG.html"
       }
@@ -18,14 +28,15 @@
   {
     "id": "2",
     "text": "Haben sie diesen Vertrag nach dem 31.12.2021 abgeschlossen?",
+
     "options": [
       {
-        "text": "Option 1",
+        "text": "Ja",
         "value": "yes",
         "next": "3"
       },
       {
-        "text": "Option 2",
+        "text": "Nein",
         "value": "no",
         "next": "ABGB.html"
       }
@@ -33,434 +44,599 @@
   },
   {
     "id": "3",
-    "text": "Haben Sie einen entgeltlichen Vertrag abgeschlossen? Darunter fallen Kaufverträge und auch Verträge über die Bereitstellung digitaler Leistungen bei denen Sie dem Unternehmer personenbezogene Daten zur Verfügung stellen ?",
+    "text": "Haben Sie einen #dfn-entgeltlichenVertrag abgeschlossen?",
+    "definedTerms": [
+      {
+        "id": "dfn-entgeltlichenVertrag",
+        "text": "entgeltlichen Vertrag "
+      }
+
+    ],
     "options": [
       {
-        "text": "Option 1",
+        "text": "Ja",
         "value": "yes",
-        "next": "5"
+        "next": "4"
       },
       {
-        "text": "Option 2",
+        "text": "Nein",
         "value": "no",
-        "next": "6"
+        "next": "ABGB.html"
       }
     ]
   },
   {
     "id": "4",
-    "text": "Haben sie einen Vertrag über bewegliche Waren (zb Handy, Fernseher, Tisch etc.) abgeschlossen? Erfasst sind auch die Montage oder Installation von Waren (§ 1 Abs 1 Z 1 VGG). Nicht erfasst sind Werkverträge.",
+    "text": "Haben sie einen Vertrag über #dfn-beweglicheWaren abgeschlossen?",
+    "definedTerms": [
+      {
+        "id": "dfn-beweglicheWaren",
+        "text": "bewegliche Waren "
+      }
+    ],
+
     "options": [
       {
-        "text": "Option 1",
+        "text": "Ja",
         "value": "yes",
         "next": "5"
       },
       {
-        "text": "Option 2",
-        "value": "no",
-        "next": "6"
-      }
-    ]
-  },
-  {
-    "id": "5",
-    "text": "Handelt es sich bei der beweglichen Sache um eine Ware, die aufgrund von Zwangsvollstreckungsmaßnahmen oder anderen gerichtlichen Maßnahmen verkauft wurde (§ 1 Abs 2 Z 10 VGG)?",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "keineGewaehrleistung.html"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "7"
-      }
-    ]
-  },
-  {
-    "id": "6",
-    "text": "Handelt es sich bei der beweglichen Sache um eine Ware, die aufgrund von Zwangsvollstreckungsmaßnahmen oder anderen gerichtlichen Maßnahmen verkauft wurde (§ 1 Abs 2 Z 10 VGG)?",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "8"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "9"
-      }
-    ]
-  },
-  {
-    "id": "7",
-    "text": "Haben sie einen Vertrag über digitale Leistungen (zB Software, Videospiele) abgeschlossen (§ 2 Z 1 VGG)",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "13"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "keineGewaehrleistung.html"
-      }
-    ]
-  },
-  {
-    "id": "8",
-    "text": "Wurde Ihnen die Ware bereits übergeben?",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "keineGewaehrleistung.html"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "19"
-      }
-    ]
-  },
-  {
-  "id": "9",
-  "text": "Handelt es sich um Software, die der Unternehmer im Rahmen einer freien und quelloffenen Lizenz anbietet, sofern Sie keine Zahlung geleistet haben und die von Ihnen hingegebenen personenbezogenen Daten durch den Unternehmer ausschließlich zur Verbesserung der Sicherheit, der Kompatibilität oder der Interoperabilität dieser speziellen Software verarbeitet werden (Open Source) oder um Finanzdienstleistungen oder um Glücksspieldienstleistungen oder um Gesundheitsdienstleistungen oder um elektronische Kommunikationsdienste (Ausnahmen nach § 1 Abs 2 Z 3-7 VGG)?",
-  "options": [
-    {
-      "text": "Option 1",
-      "value": "yes",
-      "next": "ABGB.html"
-    },
-    {
-      "text": "Option 2",
-      "value": "no",
-      "next": "10"
-      }
-    ]
-  },
-  {
-    "id": "10",
-    "text": "Haben Sie einen Vertrag über eine bewegliche Sache abgeschlossen (zB Liegenschaften, Grundstücke, Eigentumswohnnungen)?",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "11"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "keineGewaehrleistung.html"
-      }
-    ]
-  },
-  {
-    "id": "11",
-    "text": "Handelt es sich dabei um eine Ware mit digitalen Leistungen? Hinweis: Waren mit digitalen Leistungen sind bewegliche körperliche Sachen, die ihre Funktionen ohne die in ihnen enthaltenen oder mit ihnen verbundenen digitalen Leistungen nicht erfüllen können.",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "12"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "keineGewaehrleistung.html"
-      }
-    ]
-  },
-  {
-    "id": "12",
-    "text": "Ist die Ware mangelhaft? Hinweis: Eine Ware ist dann mangelhaft wenn sie eben nicht die gewöhnlich vorausgesetzten Eigenschaften bzw nicht die vertraglich zugesicherten Eigenschaften entspricht (§4 VGG).",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "Anspruch.html"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "keineGewaehrleistung.html"
-      }
-    ]
-  },
-  {
-    "id": "13",
-    "text": "Denken Sie, dass der Mangel bereits bei Übergabe vorlag oder angelegt war? Hinweis: Wenn der Mangel innerhalb eines Jahres nach der Übergabe hervorkommt, wird vermutet, dass er bereits bei Übergabe vorgelegen ist (§ 11 Abs 1 VGG).",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "19"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "14"
-      }
-    ]
-  },
-  {
-    "id": "14",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "15"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "keineGewaehrleistung.html"
-      }
-    ]
-  },
-  {
-    "id": "15",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "16"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "keineGewaehrleistung.html"
-      }
-    ]
-  },
-  {
-    "id": "16",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "17"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "keineGewaehrleistung.html"
-      }
-    ]
-  },
-  {
-    "id": "17",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "keineGewaehrleistung.html"
-      },
-      {
-        "text": "Option 2",
+        "text": "Nein",
         "value": "no",
         "next": "18"
       }
     ]
   },
   {
-    "id": "18",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
+    "id": "5",
+    "text": "Handelt es sich bei der beweglichen Sache um eine Ware, die aufgrund von Zwangsvollstreckungsmaßnahmen oder anderen gerichtlichen Maßnahmen verkauft wurde (zB gerichtliche Versteigerung)?",
     "options": [
       {
-        "text": "Option 1",
+        "text": "Ja",
         "value": "yes",
-        "next": "keineGewaehrleistung.html"
+        "next": "VGG.html"
       },
       {
-        "text": "Option 2",
+        "text": "Nein",
+        "value": "no",
+        "next": "6"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "text": "Wurde Ihnen die Ware bereits #dfn-übergeben?",
+    "definedTerms": [
+      {
+        "id": "dfn-übergeben",
+        "text": "übergeben "
+      }
+
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "7"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "VGG.html"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "text": "Handelt es sich um eine Ware mit #dfn-digitalenElementen und liegt der #dfn-mangelhaft nicht im physischen Teil der Ware ?",
+    "definedTerms": [
+      {
+        "id": "dfn-digitalenElementen",
+        "text": "digitalen Elementen "
+      },
+      {
+        "id": "dfn-mangelhaft",
+        "text": "Mangel "
+      }
+
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "8"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "12"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "text": "Ist das #dfn-digElement der Ware #dfn-mangelhaftDig?",
+    "definedTerms": [
+      {
+        "id": "dfn-mangelhaftDig",
+        "text": "mangelhaft "
+      },
+      {
+        "id": "dfn-digElement",
+        "text": "digitales Element "
+      }
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "9"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "10"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "text": "Kommt der #dfn-mangelDigElement während der #dfn-Bereitstellung des #dfn-digElement durch den #dfn-unternehmer hervor?",
+    "definedTerms": [
+      {
+        "id": "dfn-Bereitstellung",
+        "text": "Bereitstellung "
+      },
+      {
+        "id": "dfn-unternehmer",
+        "text": "Unternehmer "
+      },
+      {
+        "id": "dfn-digElement",
+        "text": "digitalen Elements "
+      },
+      {
+        "id": "dfn-mangelDigElement",
+        "text": "Mangel "
+      }
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "Anspruch.html"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "VGG.html"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "text": "Besteht eine #dfn-Aktualisierungspflicht für das #dfn-digElement der Ware und wurde diese vom Unternehmer nicht erfüllt?",
+    "definedTerms": [
+      {
+        "id": "dfn-Aktualisierungspflicht",
+        "text": "Aktualisierungspflicht "
+      },
+      {
+        "id": "dfn-digElement",
+        "text": "digitale Element "
+      },
+      {
+        "id": "dfn-unternehmer",
+        "text": "Unternehmer "
+      }
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "Anspruch.html"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "VGG.html"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "text": "Ist die Ware #dfn-mangelhaft?",
+    "definedTerms": [
+      {
+        "id": "dfn-mangelhaft",
+        "text": "mangelhaft "
+      }
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "13"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "VGG.html"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "text": "Denken Sie, dass der #dfn-mangelhaft bereits bei #dfn-mangelhaftÜbergabe vorlag oder angelegt war?",
+    "definedTerms": [
+      {
+        "id": "dfn-mangelhaft",
+        "text": "Mangel  "
+      },
+
+      {
+        "id": "dfn-mangelhaftÜbergabe",
+        "text": "Übergabe "
+      }
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "14"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "VGG.html"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "text": "Ist Ihnen der #dfn-mangelDigLeistung innerhalb von zwei Jahren nach der #dfn-mangelBereitDig aufgefallen?",
+    "definedTerms": [
+      {
+        "id": "dfn-mangelDigLeistung",
+        "text": "Mangel "
+      },
+      {
+        "id": "dfn-mangelBereitDig",
+        "text": "Übergabe "
+      }
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "15"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "VGG.html"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "text": "Wurde die Ware im gebrauchten Zustand gekauft und wurde eine verkürzte Gewährleistungsfrist vereinbart (min. ein Jahr) und ist diese vertraglich vereinbarte Frist bereits verstrichen?",
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "VGG.html"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "16"
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "text": "Sind seit dem Zeitpunkt der #dfn-mangelBereitDig mehr als zwei Jahre und drei Monate vergangen? Bei gebrauchten Waren mit verkürzter Frist: ein Jahr und drei Monate.",
+    "definedTerms": [
+      {
+        "id": "dfn-mangelBereitDig",
+        "text": "Übergabe "
+      }
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "VGG.html"
+      },
+      {
+        "text": "Nein",
         "value": "no",
         "next": "Anspruch.html"
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "text": "Wurde die Ware im gebrauchten Zustand gekauft und wurde eine verkürzte Gewährleistungsfrist vereinbart (min. ein Jahr) und ist diese vertraglich vereinbarte Frist bereits verstrichen?",
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "VGG.html"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "11"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "text": "Sind seit dem Zeitpunkt der #dfn-mangelBereitDig mehr als zwei Jahre und drei Monate vergangen? Bei gebrauchten Waren mit verkürzter Frist: ein Jahr und drei Monate.",
+    "definedTerms": [
+      {
+        "id": "dfn-mangelBereitDig",
+        "text": "Übergabe "
+      }
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "VGG.html"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "Anspruch.html"
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "text": "Haben sie einen Vertrag über eine #dfn-digLeistung2 (zB Software, Musik- oder Audiodateien, E-Books, aber auch Cloud-Dienste und Social Media) abgeschlossen?",
+    "definedTerms": [
+      {
+        "id": "dfn-digLeistung2",
+        "text": "digitale Leistungen "
+      }
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "19"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "VGG.html"
       }
     ]
   },
   {
     "id": "19",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
+    "text": "Handelt es sich um kostenlose, offene Software an, bei der Ihre persönlichen Daten nur verwendet werden, um die Sicherheit und Kompatibilität dieser speziellen Software zu verbessern (Open Source) oder handelt es sich um Dienstleistungen aus den Bereichen Finanzen, Glücksspiel, Gesundheit oder elektronische Kommunikation?",
     "options": [
       {
-        "text": "Option 1",
+        "text": "Ja",
         "value": "yes",
-        "next": "21"
+        "next": "VGG.html"
       },
       {
-        "text": "Option 2",
+        "text": "Nein",
         "value": "no",
-        "next": "23"
+        "next": "20"
       }
     ]
   },
   {
     "id": "20",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
-    "options": [
+    "text": "st die digitale Leistung #dfn-mangelDigLeistung?",
+    "definedTerms": [
       {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "15"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "keineGewaehrleistung.html"
+        "id": "dfn-mangelDigLeistung",
+        "text": "mangelhaft "
       }
-    ]
-  },
-  {
-    "id": "21",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
+    ],
     "options": [
       {
-        "text": "Option 1",
+        "text": "Ja",
         "value": "yes",
-        "next": "Anspruch.html"
+        "next": "21"
       },
       {
-        "text": "Option 2",
-        "value": "no",
-        "next": "keineGewaehrleistung.html"
-      }
-    ]
-  },
-  {
-    "id": "22",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "24"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "23"
-      }
-    ]
-  },
-  {
-    "id": "23",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "24"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "keineGewaehrleistung.html"
-      }
-    ]
-  },
-  {
-    "id": "24",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "28"
-      },
-      {
-        "text": "Option 2",
+        "text": "Nein",
         "value": "no",
         "next": "25"
       }
     ]
   },
   {
-    "id": "25",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
-    "options": [
+    "id": "21",
+    "text": "Ist die digitale Leistung #dfn-einOderMehrmals #dfn-unternehmer bereitzustellen?",
+    "definedTerms": [
       {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "26"
+        "id": "dfn-einOderMehrmals",
+        "text": "einmal bzw mehrmals durch den  "
       },
       {
-        "text": "Option 2",
+        "id": "dfn-unternehmer",
+        "text": "Unternehmer "
+      }
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "22"
+      },
+      {
+        "text": "Nein",
         "value": "no",
-        "next": "keineGewaehrleistung.html"
+        "next": "26"
+      }
+    ]
+  },
+  {
+    "id": "22",
+    "text": "Denken Sie, dass der Mangel #dfn-übergeben durch den Unternehmer vorlag oder angelegt war?",
+    "definedTerms": [
+      {
+        "id": "dfn-übergeben",
+        "text": "bereits bei Bereitstellung "
+      }
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "23"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "VGG.html"
+      }
+    ]
+  },
+  {
+    "id": "23",
+    "text": "Ist Ihnen der #dfn-mangelDigLeistung innerhalb von zwei Jahren nach der #dfn-übergeben aufgefallen?",
+    "definedTerms": [
+      {
+        "id": "dfn-mangelDigLeistung",
+        "text": "Mangel "
+      },
+      {
+        "id": "dfn-übergeben",
+        "text": "Bereitstellung "
+      }
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "24"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "VGG.html"
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "text": "Sind seit dem Zeitpunkt der #dfn-übergeben mehr als zwei Jahre und drei Monate vergangen?",
+    "definedTerms": [
+      {
+        "id": "dfn-übergeben",
+        "text": "Bereitstellung "
+      }
+    ],
+
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "VGG.html"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "Anspruch.html"
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "text": "Besteht eine #dfn-aktualisierungspflicht für die #dfn-mangelDigLeistung und wurde diese vom #dfn-unternehmer nicht erfüllt?",
+    "definedTerms": [
+      {
+        "id": "dfn-unternehmer",
+        "text": "Unternehmer "
+      },
+      {
+        "id": "dfn-aktualisierungspflicht",
+        "text": "Aktualisierungspflicht "
+      },
+      {
+        "id": "dfn-mangelDigLeistung",
+        "text": "digitale Leistung "
+      }
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "Anspruch.html"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "VGG.html"
       }
     ]
   },
   {
     "id": "26",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
-    "options": [
+    "text": "Ist die #dfn-digLeistung nach dem Vertrag über #dfn-fortlaufen vom #dfn-unternehmer bereitzustellen?",
+    "definedTerms": [
       {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "Anspruch.html"
+        "id": "dfn-fortlaufend",
+        "text": "fortlaufenden Zeitraum "
       },
       {
-        "text": "Option 2",
+        "id": "dfn-unternehmer",
+        "text": "Unternehmer "
+      },
+      {
+        "id": "dfn-digLeistung",
+        "text": "digitale Leistung "
+      }
+    ],
+    "options": [
+      {
+        "text": "Ja",
+        "value": "yes",
+        "next": "27"
+      },
+      {
+        "text": "Nein",
         "value": "no",
-        "next": "keineGewaehrleistung.html"
+        "next": "VGG.html"
       }
     ]
   },
   {
     "id": "27",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
-    "options": [
+    "text": "Kommt der Mangel während der dfn-fortlaufend durch den #dfn-unternehmer hervor?",
+    "definedTerms": [
       {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "A28"
+        "id": "dfn-fortlaufend",
+        "text": "Bereitstellung "
       },
       {
-        "text": "Option 2",
-        "value": "no",
-        "next": "keineGewaehrleistung.html"
+        "id": "dfn-unternehmer",
+        "text": "Unternehmer "
       }
-    ]
-  },
-  {
-    "id": "26",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
+    ],
     "options": [
       {
-        "text": "Option 1",
+        "text": "Ja",
         "value": "yes",
-        "next": "29"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
-        "next": "keineGewaehrleistung.html"
-      }
-    ]
-  },
-  {
-    "id": "26",
-    "text": "Ist Ihnen der Mangel innerhalb von zwei Jahren nach der Übergabe (der Verkäufer hat seine Pflicht aus dem Kaufvertrag erfüllt) aufgefallen (§ 10 Abs 1 VGG)?",
-    "options": [
-      {
-        "text": "Option 1",
-        "value": "yes",
-        "next": "keineGewaehrleistung.html"
-      },
-      {
-        "text": "Option 2",
-        "value": "no",
         "next": "Anspruch"
+      },
+      {
+        "text": "Nein",
+        "value": "no",
+        "next": "VGG.html"
       }
     ]
   }
+
 ]

@@ -1,20 +1,55 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="StartEnd.css">
-
-    <meta charset="UTF-8">
+    <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="StartEnd.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABGB</title>
 
 </head>
+
 <body>
-<div id="message">
-    Es kommt das ABGB zur Anwendung. Bitte ziehen Sie einen Rechtsanwalt zu Hilfe. Es könnte bereits Verjährung eingetreten sein.
+    <div class="wrapper-readme">
+        <main>
+            <div class="logo-readme">
+                <img src="pictures/home/logoHome-removebg-preview.png" alt="">
+            </div>
+    <div id="message" class="vgg-message">
+    Es besteht kein Anspruch auf Gewährleistung nach dem VGG (Verbrauchergewährleistungsgesetz).
+        Es könnte ein Anspruch nach dem ABGB (Allgemeines Bürgerliches Gesetzbuch) bestehen.
+    <br>
+    Dieser Gewährleistungscheker ist nur auf das VGG ausgelegt.
 </div>
+</main>
+
 <div class="button-container">
     <a href="Start.html" class="button-89" role="button">Zurück</a>
-
+    <button onclick="sendEmail()" class="button-89" role="button">Kontakt</button>
+    <a href="home.html" class="button-89 btn-home">zum <br>Homescreen</a>
 </div>
+
+<footer class="footer">
+    <nav class="nav-footer">
+      <a href="Impressum.html">Impressum</a>
+      <a href="Datenschutzerklaerung.html">Datenschutzerklärung</a>
+      <!--<a href="AGB.html">AGB</a>-->
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <div>Legal Tech Hackathon 2023 FH Campus Wien & Uni Wien</div>
+      
+      </footer>
+    </div>
+
+<script type="text/javascript">
+    function sendEmail() {
+        var message = document.getElementById("message").textContent;
+        var subject = "Contact Request: LexClaim-ABGB";
+        var body = message;
+        window.location.href = "mailto:example@mail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    }
+</script>
 </body>
+
 </html>

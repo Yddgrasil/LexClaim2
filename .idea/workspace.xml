@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c4181094-261e-4f16-a755-b70dae73828b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GewährleistungsBAUM.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ABGB.html" beforeDir="false" afterPath="$PROJECT_DIR$/ABGB.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anspruch.html" beforeDir="false" afterPath="$PROJECT_DIR$/Anspruch.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Datenschutzerklaerung.html" beforeDir="false" afterPath="$PROJECT_DIR$/Datenschutzerklaerung.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Impressum.html" beforeDir="false" afterPath="$PROJECT_DIR$/Impressum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Start.html" beforeDir="false" afterPath="$PROJECT_DIR$/Start.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StartEnd.css" beforeDir="false" afterPath="$PROJECT_DIR$/StartEnd.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VGG.html" beforeDir="false" afterPath="$PROJECT_DIR$/VGG.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case.css" beforeDir="false" afterPath="$PROJECT_DIR$/case.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/definitions.json" beforeDir="false" afterPath="$PROJECT_DIR$/definitions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keineGewaehrleistung.html" beforeDir="false" afterPath="$PROJECT_DIR$/keineGewaehrleistung.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pictures/backgroundmain2.png" beforeDir="false" afterPath="$PROJECT_DIR$/pictures/backgroundmain2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/questions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions.json" beforeDir="false" afterPath="$PROJECT_DIR$/questions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.html" beforeDir="false" afterPath="$PROJECT_DIR$/readme.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2Pnt3e6HT6nLbTV0yPGFRB8l7fL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Dani/Downloads/LexClaim-main",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c4181094-261e-4f16-a755-b70dae73828b" name="Changes" comment="" />
+      <created>1684104475567</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684104475567</updated>
+      <workItem from="1684104476911" duration="142000" />
+      <workItem from="1684105252606" duration="16000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

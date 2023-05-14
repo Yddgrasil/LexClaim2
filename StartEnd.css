@@ -1,85 +1,647 @@
-body {
 
-    background-image: url(pictures/5630974.jpg);
+@media screen and (min-width:1100px){
+
+
+    .wrapper-readme{
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+    }
+
+    main{
+        display: flex;
+        justify-content: center;
+    }
+
+    .grow{
+        flex: 1 1 auto;
+        margin: 25px;
+    }
+
+    body {
+
+        background-image: url(pictures/5630974.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100%;
+    }
+    
+    .logo img {
+        position: absolute;
+        top: 0px; /* adjust to the desired position from top */
+        left: 3px; /* adjust to the desired position from left */
+        width: 400px; /* adjust to the desired size */
+        height: 400px; /* adjust to the desired size */
+        z-index: -1;
+    }
+    
+   
+
+
+    .logo-readme{
+       width: 240px;
+       height: 240px;
+       position: absolute;
+       top:20px;
+       left: 20px;
+    }
+    .logo-readme img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    #message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 50vh;
+        border: 1px solid black;
+        padding: 10px;
+        margin: 50px auto;
+        width: 50%;
+        line-height: 1.5;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        background-color: rgba(18, 18, 90, 0.25);
+        border-radius: 25px;
+    }
+
+
+   
+    
+    h1 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 100px 0 50px 0;
+        font-size: 80px; /* adjust to the desired size */
+    }
+    
+    /* CSS code here */
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        flex-grow: 1;
+    }
+    
+    .button-container a:first-child {
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+    
+    
+    
+    
+          /* CSS */
+      .button-89 {
+          --b: 3px;   /* border thickness */
+          --s: .45em; /* size of the corner */
+          --color: #373B44;
+    
+          padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+          color: var(--color);
+          --_p: var(--s);
+          background:
+                  conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+                  var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+          transition: .3s linear, color 0s, background-color 0s;
+          outline: var(--b) solid #0000;
+          outline-offset: .6em;
+          font-size: 16px;
+          align-items: center;
+          border: 0;
+    
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+      }
+    
+    .button-89:hover,
+    .button-89:focus-visible{
+        --_p: 0px;
+        outline-color: var(--color);
+        outline-offset: .05em;
+    }
+    
+    .button-89:active {
+        background: var(--color);
+        color: #fff;
+    }
+    
+    
+    
+    .close{
+        display: block;
+        margin: 10px auto;
+        width: 180px;
+        /*height: 70px;*/
+        background-color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        transition: all 1s;
+        
+    }
+    
+    .close:hover{
+        transform: scale(1.1);
+        box-shadow: 0px 0px 5px rgb(27, 27, 43);
+        color: green;
+    }
+    
+    .pop-info{
+        position: fixed;
+        top:0%;
+        left: 30%;
+        width: 600px;
+        height: 450px;
+        border-radius: 25px;
+        padding: 25px 50px 25px 50px;
+        font-size: 18px;
+        text-align: justify;
+        background: rgb(255,255,255);
+        background: linear-gradient(30deg, rgba(255,255,255,1) 0%, rgba(100,255,229,1) 0%, rgba(87,115,245,1) 78%);
+        font-family: "Oswald";
+        opacity: 0;
+        transition: all 1s;
+        z-index: -100;
+    
+    } 
+    
+    .info{
+        margin: 5px 0px;
+        line-height: 1.5;
+    }
+    
+    .pop-info.active{
+        top:10%;
+        opacity: 1;
+        z-index: 100;
+    }
+    
+    .wrapper{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        filter: blur(10px); 
+    } 
+    
+    .wrapper.Unblure{
+        filter: blur(0);
+    }
+    
+    
+    
+    .btn-question{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        padding: 10px;
+        width: 120px;
+        height: 70px;
+        font-size: 24px;
+        margin: 0px 15px;
+        border: none;
+        transition: transform 1s;
+        cursor: pointer;
+        background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(100,255,114,1) 0%, rgba(87,115,245,1) 69%);
+        color: white;
+        
+    }
+    .btn-question.small{
+        font-size: 20px;
+        text-align: center;
+    }
+    
+     .start{
+        margin-top: 100px;
+     }
+     .start:hover{
+        
+        transform: scale(1.2);
+        box-shadow: 0px 0px 5px rgb(27, 27, 43);
+        color: green;
+    }
+    .btn-home{
+        margin-bottom: 25px;
+    }
+    
+    
+    .footer{
+        width: 100%;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(80, 80, 255);
+        font-size: 20px;
+        padding: 5px 25px;
+        text-align: center;
+    }
+    .nav-footer{
+        margin: 10px auto;
+    }
+    
+    
+    footer a{
+        color: #fff;
+        display: inline-block;
+        margin: 10px 10px;
+    }
+    footer a:hover{
+        color: #ff8002;
+        display: inline-block;
+        
+        text-decoration: underline;
+    }
+}
+/*    */
+@media screen  and (max-width:1099px){
+    .wrapper-readme{
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+    }
+
+    main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .grow{
+        flex: 1 1 auto;
+        margin: 25px;
+    }
+
+    body {
+
+        background-image: url(pictures/5630974.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100%;
+    }
+    
+.logo{
+    max-height: 300px;
+    order: 0;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+    .logo img {
+        /* position: absolute;
+        top: 0px; 
+        left: 3px; 
+        width: 400px;
+        height: 400px; 
+        z-index: -1; */
+    }
+    
+    
+    #message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 50vh;
+        border: 1px solid black;
+        padding: 5px;
+        margin: 50px auto;
+        width: 60%;
+        line-height: 1.5;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .vgg-message{
+        min-height: 220px;
+    }
+    
+    .Anspruch-message{
+        min-height: 180px;
+        
+    }
+   
+    h1 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0 0 50px 0;
+        font-size: 65px; /* adjust to the desired size */
+        order: 1;
+    }
+    
+    /* CSS code here */
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 2;
+        flex-grow: 1;
+    }
+    
+    .button-container a:first-child {
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+    
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-readme{
+        position: static;
+    }
+
+    .logo-readme img{
+
+    }
+    
+    
+          /* CSS */
+      .button-89 {
+          --b: 3px;   /* border thickness */
+          --s: .45em; /* size of the corner */
+          --color: #373B44;
+    
+          padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+          color: var(--color);
+          --_p: var(--s);
+          background:
+                  conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+                  var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+          transition: .3s linear, color 0s, background-color 0s;
+          outline: var(--b) solid #0000;
+          outline-offset: .6em;
+          font-size: 16px;
+          align-items: center;
+          border: 0;
+    
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+      }
+    
+    .button-89:hover,
+    .button-89:focus-visible{
+        --_p: 0px;
+        outline-color: var(--color);
+        outline-offset: .05em;
+    }
+    
+    .button-89:active {
+        background: var(--color);
+        color: #fff;
+    }
+    
+    
+    
+    .close{
+        display: block;
+        margin: 10px auto;
+        width: 180px;
+        height: 70px;
+        background-color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        transition: all 1s;
+        
+    }
+    
+    .close:hover{
+        transform: scale(1.1);
+        box-shadow: 0px 0px 5px rgb(27, 27, 43);
+        color: green;
+    }
+    
+    .pop-info{
+        position: fixed;
+        top:0%;
+        left: 20%;
+        max-width: 600px;
+        min-height: 450px;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 5px;
+        font-size: 18px;
+        text-align: justify;
+        background: rgb(255,255,255);
+        background: linear-gradient(30deg, rgba(255,255,255,1) 0%, rgba(100,255,229,1) 0%, rgba(87,115,245,1) 78%);
+        font-family: "Oswald";
+        opacity: 0;
+        transition: all 1s;
+        z-index: -100;
+    
+    } 
+    
+    .info{
+        margin: 5px 0px;
+        line-height: 1.5;
+    }
+    
+    .pop-info.active{
+        top:10%;
+        opacity: 1;
+        z-index: 100;
+    }
+    
+    .wrapper{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        filter: blur(10px); 
+    } 
+    
+    .wrapper.Unblure{
+        filter: blur(0);
+    }
+    
+    
+    
+    .btn-question{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        padding: 10px;
+        width: 120px;
+        height: 70px;
+        font-size: 24px;
+        margin: 0px 15px;
+        border: none;
+        transition: transform 1s;
+        cursor: pointer;
+        background: rgb(255,255,255);
+        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(100,255,114,1) 0%, rgba(87,115,245,1) 69%);
+        color: white;
+        
+    }
+    .btn-question.small{
+        font-size: 20px;
+        text-align: center;
+    }
+    
+     .start{
+        margin-top: 100px;
+     }
+     .start:hover{
+        
+        transform: scale(1.2);
+        box-shadow: 0px 0px 5px rgb(27, 27, 43);
+        color: green;
+    }
+    
+    
+    .footer{
+        width: 100%;
+        min-height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(80, 80, 255);
+        font-size: 20px;
+        padding: 5px 25px;
+        text-align: center;
+        order: 3;
+    }
+    .nav-footer{
+        margin: 10px auto;
+    }
+    
+    
+    footer a{
+        color: #fff;
+        display: inline-block;
+        margin: 10px 10px;
+    }
+    footer a:hover{
+        color: #ff8002;
+        display: inline-block;
+        
+        text-decoration: underline;
+    }
+
+    .btn_home{
+        margin-bottom: 25px;
+    }
+}
+
+body{
+    background: url(pictures/home/backgroundHome.png);
+    font-family: "Oswald";
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
+.btn-home{
+font-size: 20px;
+text-align: center;
 }
 
-#message {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    border: 1px solid black;
-    padding: 10px;
-    margin: 50px auto;
-    width: 50%;
+.start1{
+    margin: 50px 0;
+    text-align: center;
     line-height: 1.5;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
 }
 
-h1 {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 50px;
-    font-size: 40px;
-}
-/* CSS code here */
-.button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.button-container a:first-child {
-    margin-bottom: 10px;
-    font-size: 24px;
-}
-
-
-
-
-                                                       /* CSS */
-                                                   .button-89 {
-                                                       --b: 3px;   /* border thickness */
-                                                       --s: .45em; /* size of the corner */
-                                                       --color: #373B44;
-
-                                                       padding: calc(.5em + var(--s)) calc(.9em + var(--s));
-                                                       color: var(--color);
-                                                       --_p: var(--s);
-                                                       background:
-                                                               conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
-                                                               var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-                                                       transition: .3s linear, color 0s, background-color 0s;
-                                                       outline: var(--b) solid #0000;
-                                                       outline-offset: .6em;
-                                                       font-size: 16px;
-                                                       align-items: center;
-                                                       border: 0;
-
-                                                       user-select: none;
-                                                       -webkit-user-select: none;
-                                                       touch-action: manipulation;
-                                                   }
-
-.button-89:hover,
-.button-89:focus-visible{
-    --_p: 0px;
-    outline-color: var(--color);
-    outline-offset: .05em;
+@media screen and (max-width:1100px){
+    body{
+        font-size: 14px;
+    }
+   
+   
+    .logo-readme{
+        width: 120px;
+        height: 120px;
+        position: static;
+     }
+     .logo-readme img{
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+     }
 }
 
-.button-89:active {
-    background: var(--color);
-    color: #fff;
+@media screen and (max-width: 850px) {
+    .pop-info{
+        position: fixed;
+        top:0%;
+        left: 5%;
+        max-width: 600px;
+        min-height: 450px;
+        border-radius: 25px;
+        padding: 25px 50px 25px 50px;
+        font-size: 18px;
+        text-align: justify;
+        background: rgb(255,255,255);
+        background: linear-gradient(30deg, rgba(255,255,255,1) 0%, rgba(100,255,229,1) 0%, rgba(87,115,245,1) 78%);
+        font-family: "Oswald";
+        opacity: 0;
+        transition: all 1s;
+        z-index: -100;
+    
+    } 
+
+
+    #message{
+       font-size: 18px;
+    }
+}
+
+@media screen  and (max-width:480px){
+    #message {
+       
+        height: 50vh;
+        padding: 10px;
+        margin: 50px auto;
+        width: 90%;
+        font-size: 14px;
+        height: auto;
+        
+    }
+    .footer{
+        min-height: auto;
+    }
+    .pop-info{
+        position: fixed;
+        top:0%;
+        left: 0%;
+        border-radius: 25px;
+        padding: 20px 10px 10px 10px;
+        font-size: 14px;
+        text-align: justify;
+        background: rgb(255,255,255);
+        background: linear-gradient(30deg, rgba(255,255,255,1) 0%, rgba(100,255,229,1) 0%, rgba(87,115,245,1) 78%);
+        font-family: "Oswald";
+        opacity: 0;
+        transition: all 1s;
+        z-index: -100;
+    
+    } 
+
+    .close{
+        margin-top: 50px;
+    }
+}
+
+h1{
+    font-family: "Oswald";
+}
+.btn-home{
+    margin-bottom: 25px;
 }

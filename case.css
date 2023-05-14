@@ -1,15 +1,788 @@
 
-.question-container {
-    text-align: center;
-}
-#fragen {
+/*Home page (Main.html)*/
+.wrapper{ /*Fragen + Ja-Nein-Zurück-Buttons + Footer*/
+    width: 100%;
     display: flex;
-    font-size: large;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.frage-container {
+       display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    border-radius: 10px;
+    max-width: 500px;
+    overflow-y: hidden;
+    padding: 20px;
+    flex-grow: 1;
+} 
+
+#buttons-container {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px;
+    margin-top: 50px;
 }
+.logo-main{
+    
+}
+.logo-main img{
+    width: 100%;
+    height: 100%;
+}
+
+/*Ja-Nein Buttons*/
+.answer-buttons-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+@media (max-width: 624px) { 
+
+    .logo-kontakt{
+        position: absolute;
+        top:10px;
+        left: 25px;
+        max-width: 240px;
+        max-height: 240px;
+
+        align-self: flex-start;
+    }
+    .logo-kontakt img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    /*email,tel,adresse*/
+    .kontakt {
+        flex-grow: 1; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50%;
+    }
+    /*email,tel,adresse-fenster ефект об'ємності*/
+    .kontakt_list {
+        border-radius: 25px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        margin: 0 auto;
+       justify-content: center;
+       align-items: center; /*Worte sind in der Mitte des Fensters*/
+       border: none;
+       box-shadow: 0px 0px 3px black;
+       line-height: 1.8;
+       font-size: 18px;
+       font-weight: 800;
+    }
+    .body_home{
+        background: url(pictures/home/backgroundHome.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+  
+    .wrapper{
+        justify-content: space-between;
+            
+        } 
+    
+    .home-header {
+        background: rgb(96,186,187);
+        background: linear-gradient(131deg, rgb(43, 75, 118) 12%, rgba(50, 95, 163, 0.71) 100%);
+        width: 100%;
+        height: 80px;
+        position: relative;
+    }
+    .container_heaader {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        position: relative;
+        height: 80px;
+    }
+
+    .burger{
+        position: absolute;
+        top:5px;
+        right: 50px;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .header_menu span{
+       
+        border: none;
+        width: 100%;
+        height: 2px;
+        margin: 5px;
+        background-color: white;
+        transition: transform  1s;
+    }
+
+
+    .burger.menu_active span:nth-child(2){
+        display: none;
+    }
+    .burger.menu_active span:nth-child(1){
+        transform: rotate(45deg);
+        margin: 0;
+        background-color: tomato;
+    }
+    .burger.menu_active span:nth-child(3){
+        transform: rotate(-45deg);
+        margin: 0;
+        background-color: tomato;
+    }
+
+
+    
+    .heaader_logo {
+    height: 100%;
+    position: absolute;
+    top:0px;
+    left: 50px;
+    
+    }
+    .heaader_logo img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    
+    
+    .logo-main{
+        width: 120px;
+    }
+    .logo-main img{
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+    .header_menu {
+
+    }
+
+    .header_menu-list{
+       opacity: 0;
+       top:-50px;
+    }
+
+
+
+    .header_menu-list.menu_active {
+        border-radius: 10px;
+        position: absolute;
+        top:80px;
+        left: 15%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 1;
+        flex-wrap: wrap;
+        background: linear-gradient(131deg, rgb(43, 75, 118) 12%, rgba(50, 95, 163, 0.71) 100%);
+        border: 1px solid white;
+        width: 70%;
+        transition: all 1s;
+
+    }
+    .header_menu-item {
+    }
+    .header_menu-link {
+        color: #fff;
+        display: inline-block;
+        margin: 10px 10px;
+        font-size: 20px;
+    }
+    .header_menu-link:hover{
+    color: #ff8002;
+    text-decoration: underline;
+    
+    }
+
+
+/*_______________________________________________________*/
+
+    .main{
+        margin: 25px;
+        max-width: 600px;
+        
+        box-shadow: 0px 0px 5px black;
+        background-color: rgba(18, 18, 90, 0.25);
+    
+        padding: 25px 50px 25px 50px;
+        font-size: 14px;
+        text-align: justify;
+        border-radius: 25px;
+    }
+    
+    .main p{
+       
+        margin: 5px 0px;
+        line-height: 1.5;
+    }
+
+    .frage-container{
+        overflow: hidden;
+        justify-content: center;
+        
+    }
+
+    #answer-buttons-container{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+.logo-main{
+    max-width: 180px;
+    max-height: 180px;
+}
+
+.logo-main img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+    .footer{
+        width: 100%;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+        justify-content: center;
+        background-color: rgb(80, 80, 255);
+        font-size: 14px;
+        padding: 5px 10px;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .nav-footer{
+        margin: 5px 0;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    footer a{
+        color: #fff;
+        display: inline-block;
+        margin: 5px 5px;
+    }
+    footer a:hover{
+        color: #ff8002;
+        display: inline-block;
+        
+        text-decoration: underline;
+    }
+    .footer div{
+        font-size: 14px;
+    }
+
+  
+
+ }
+@media screen and (min-width:624px) and (max-width:824px) {
+    
+    .logo-kontakt{
+        position: absolute;
+        top:10px;
+        left: 25%;
+        max-width: 280px;
+        max-height: 280px;
+
+        align-self: flex-start;
+    }
+    .logo-kontakt img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .kontakt {
+        flex-grow: 1; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25%;
+    }
+    .kontakt_list {
+        border-radius: 25px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        margin: 0 auto;
+       justify-content: center;
+       align-items: center; 
+       border: none;
+       box-shadow: 0px 0px 3px black;
+       line-height: 1.8;
+       font-size: 18px;
+       font-weight: 800;
+    }
+
+    .wrapper{
+    justify-content: space-between;
+        
+    } 
+
+    .body_home{
+        background: url(pictures/home/backgroundHome.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    
+    .home-header {
+        background: rgb(96,186,187);
+        background: linear-gradient(131deg, rgb(43, 75, 118) 12%, rgba(50, 95, 163, 0.71) 100%);
+        width: 100%;
+        height: 120px;
+    }
+    .container_heaader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 120px;
+    }
+    .heaader_logo {
+        height: 120px;
+        position: absolute;
+        top:0px;
+        left: 0px;
+        max-width: 120px;
+        }
+    .heaader_logo img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    
+    
+    
+    .header_menu {
+    }
+    .header_menu-list {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+    .header_menu-item {
+    }
+    .header_menu-link {
+        color: #fff;
+        display: inline-block;
+        margin: 10px 10px;
+        font-size: 20px;
+    }
+    .header_menu-link:hover{
+    color: #ff8002;
+    text-decoration: underline;
+    
+    }
+    .main{
+        margin: 25px;
+        max-width: 600px;
+        max-height: 450px;
+        box-shadow: 0px 0px 5px black;
+        background-color: rgba(18, 18, 90, 0.25);
+    
+        padding: 25px 50px 25px 50px;
+        font-size: 18px;
+        text-align: justify;
+        border-radius: 25px;
+    }
+    
+    .main p{
+       
+        margin: 5px 0px;
+        line-height: 1.5;
+    }
+    .footer{
+        width: 100%;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+        justify-content: center;
+        background-color: rgb(80, 80, 255);
+        font-size: 14px;
+        padding: 5px 10px;
+        text-align: center;
+    }
+    .nav-footer{
+        margin: 5px 0;
+        display: flex;
+        
+    }
+    
+    
+    footer a{
+        color: #fff;
+        display: inline-block;
+        margin: 5px 5px;
+    }
+    footer a:hover{
+        color: #ff8002;
+        display: inline-block;
+        
+        text-decoration: underline;
+    }
+    .footer div{
+        font-size: 16px;
+    }
+
+  
+    
+
+ }
+@media screen and (min-width:825px) and (max-width:1300px) {
+      
+    
+    .kontakt {
+        flex-grow: 1; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .kontakt_list {
+        border-radius: 25px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        width: 33.3%;
+        margin: 0 auto;
+       justify-content: center;
+       align-items: center; 
+       border: none;
+       box-shadow: 0px 0px 3px black;
+       line-height: 1.8;
+       font-size: 18px;
+       font-weight: 800;
+    }
+
+
+    .body_home{
+        background: url(pictures/home/backgroundHome.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    
+    .home-header {
+        background: rgb(96,186,187);
+        background: linear-gradient(131deg, rgb(43, 75, 118) 12%, rgba(50, 95, 163, 0.71) 100%);
+        width: 100%;
+        height: 120px;
+    }
+    .container_heaader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 120px;
+    }
+    .heaader_logo {
+        height: 200px;
+        position: absolute;
+        top:10%;
+        left: 5%;
+        max-width: 200px;
+        }
+    .heaader_logo img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    
+    
+    
+    .header_menu {
+    }
+    .header_menu-list {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+    .header_menu-item {
+    }
+    .header_menu-link {
+        color: #fff;
+        display: inline-block;
+        margin: 10px 10px;
+        font-size: 20px;
+    }
+    .header_menu-link:hover{
+    color: #ff8002;
+    text-decoration: underline;
+    
+    }
+
+
+    .wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 100vh;
+        align-items: center;
+    }
+    .frage-container {
+        /* position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+        display: flex;
+        flex-direction: column;
+        justify-content: center ;
+        align-items: center;
+        border-radius: 10px;
+        /* background-color: #f8f8f8; */
+        
+        max-width: 500px;
+        max-height: 500px;
+        overflow: hidden;
+        padding: 20px;
+        flex-grow: 1;
+    } 
+    
+    #buttons-container {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 20px;
+        margin-top: 50px;
+    }
+
+
+
+
+    /*Text-Fenster im Homescreen*/
+    .main{
+        margin: 25px;
+        max-width: 600px;
+        max-height: 450px;
+        box-shadow: 0px 0px 5px black;
+        background-color: rgba(18, 18, 90, 0.25);
+    
+        padding: 25px 50px 25px 50px;
+        font-size: 18px;
+        text-align: justify;
+        border-radius: 25px;
+    }
+
+    /*Text Fenster im Homescreen*/
+    .main p{
+       
+        margin: 5px 0px;
+        line-height: 1.5;
+    }
+
+    footer a{
+        margin: 5px 5px;
+        color: #fff;
+        display: inline-block;
+       
+    }
+
+ }
+@media (min-width: 1300px) {
+    
+    .kontakt {
+        flex-grow: 1; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .kontakt_list {
+        border-radius: 25px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        width: 33.3%;
+        margin: 0 auto;
+       justify-content: center;
+       align-items: center; 
+       border: none;
+       box-shadow: 0px 0px 3px black;
+       line-height: 1.8;
+       font-size: 18px;
+       font-weight: 800;
+    }
+
+    .logo-kontakt{
+        position: absolute;
+        top:10px;
+        left: 50px;
+        max-width: 300px;
+        max-height: 300px;
+
+        align-self: flex-start;
+    }
+    .logo-kontakt img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+
+    .wrapper{
+        justify-content: space-between;
+    }
+    .body_home{
+        background: url(pictures/home/backgroundHome.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+    .frage-container{
+        justify-content: flex-start;
+    }
+    
+    .home-header {
+        background: rgb(96,186,187);
+        background: linear-gradient(131deg, rgb(43, 75, 118) 12%, rgba(50, 95, 163, 0.71) 100%);
+        width: 100%;
+        height: 120px;
+    }
+    .container_heaader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 100%;
+    }
+    .heaader_logo {
+       position: absolute;
+       left: 10px;
+       top: 50px;
+       width: 240px;
+       height: 240px;
+    }
+    .heaader_logo img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+    
+    .logo-main{
+        margin-top: 25px;
+        align-self: flex-start;
+        max-width: 400px;
+        height: 240px;
+    }
+    
+    .header_menu {
+    }
+    .header_menu-list {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+    .header_menu-item {
+    }
+    .header_menu-link {
+        color: #fff;
+        display: inline-block;
+        margin: 10px 10px;
+        font-size: 20px;
+    }
+    .header_menu-link:hover{
+    color: #ff8002;
+    text-decoration: underline;
+    
+    }
+    .main{
+        margin: 25px;
+        max-width: 600px;
+        max-height: 450px;
+        box-shadow: 0px 0px 5px black;
+        background-color: rgba(18, 18, 90, 0.25);
+    
+        
+        padding: 25px 50px 25px 50px;
+        font-size: 18px;
+        text-align: justify;
+        border-radius: 25px;
+    }
+    
+    .main p{
+       
+        margin: 5px 0px;
+        line-height: 1.5;
+    }
+
+    .footer{
+        width: 100%;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+        justify-content: center;
+        background-color: rgb(80, 80, 255);
+        font-size: 14px;
+        padding: 5px 10px;
+        text-align: center;
+    }
+    .nav-footer{
+        margin: 5px 0;
+        display: flex;
+        
+    }
+    
+    
+    footer a{
+        color: #fff;
+        display: inline-block;
+        margin: 5px 10px;
+    }
+    footer a:hover{
+        color: #ff8002;
+        display: inline-block;
+        
+        text-decoration: underline;
+    }
+    .footer div{
+        font-size: 18px;
+    }
+
+
+}
+
+
+/*Main*/
+
+
 
 h1 {
     text-align: center;
@@ -18,63 +791,152 @@ h1 {
     margin: 50px auto;
     font-size: 10px;
 }
+
 body {
-    background-image: url(pictures/backgroundmain.png);
+    background-image: url(pictures/home/backgroundHome.png);
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: "Oswald";
+    min-height: 100%;
 }
+
 dfn {
     position: relative;
-}
-dfn:hover:after {
-    content: attr(title);
-    background: #F8F8FF;
-    padding: 5px 12px;
-    border: solid 1px #ddd;
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    border-bottom: 1px dashed #000;
+    cursor: help;
 }
 
-h1 {
-    text-align: center;
+dfn {
+    cursor: help;
+    border-bottom: 1px dotted black;
+}
+
+/*Fragen im Checker - Fragen + Ja-Nein-Zurück Buttons*/
+#question-container {
+    margin: 1em 0;
+    width: 100%;
+    text-align: center; /*Fragetext zentriert*/
+    font-size: 20px; /*Schriftgröße*/
     color: blue;
-    font-size:20px;
-    font-weight: bold;
-
-}
-
-.col:nth-child(1) { background: pink; }
-.col:nth-child(2) { background: lavender; }
-
-img {width: 100%; height: auto; }
-
-@media (min-width: 500px) {
-    .container {
-        display: table;
-        border-spacing: 16px;
-        width: 100%;
-    }
-    .col {
-        display: table-cell;
-        box-sizing: border-box;
-        cell-spacing: 8px;
-        padding: 0.5em;
-        vertical-align: top
+    line-height: 1.5; /*Abstand zw.Zeilen in Fragen*/
     }
 
-    .col:nth-child(1) { width: 30%; }
-    .col:nth-child(2) { width: 70%; }
+#question-container dfn {
+    font-style: italic;
+   
 }
 
-p {
+
+
+
+.definition:hover::before {
+    content: attr(title);
+    padding: 0.5em;
+    background-color: #f1f1f1;
+    position: absolute;
+    z-index: 2;
+    top: 1.5em;
+    left: 0;
+    min-width: 10em;
+    border: 1px solid black;
+    border-radius: 0.25em;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.25);
+}
+
+
+/*Footer*/
+.footer{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(80, 80, 255);
+    font-size: 20px;
+    padding: 5px 25px; /*oben,unten,rechts,links - відступ текста у footer*/
+    text-align: center; /*Text im Footer zentriert*/
+}
+.nav-footer{
+    margin: 10px auto;
+}
+
+
+footer a{ /*Links im Footer*/
+    color: #fff;
+    display: inline-block;
+   
+}
+footer a:hover{ /*Links im Footer при наведенні*/
+    color: #ff8002;
+    display: inline-block;
+    text-decoration: underline;
+}
+
+/*Ja-Nein Buttons*/
+.btn-question{
+    display: inline-flex;
+    justify-content: center; /*Info im Button wird in die Mitte platziert*/
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px;
+    width: 120px;
+    height: 70px;
+    font-size: 24px; /*Buchstaben im Button*/
+    margin: 0px 15px; /*0-unten,15-rechts,links*/
+    border: none;
+    transition: transform 1s;
+    cursor: pointer;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(100,255,114,1) 0%, rgba(87,115,245,1) 69%);
+    color: white; /*Ja,Nein;Zurück-Color im Buttons*/
+    
+}
+.btn-question.small{ /*Button "zum Homescreen"*/
+    font-size: 20px;
     text-align: center;
-    font-weight: inherit;
-    font-size: medium;
 }
 
-#fragekaufv {
-    width: 160px;
-    float: left;
+.btn-question:hover{
+   transform: scale(1.2);
+   box-shadow: 0px 0px 5px rgb(27, 27, 43);
+   color: green;
+}
+
+/*Kontakt Screen*/
+.wrapper_kontakt {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.kontakt_item {
+}
+.btn-question {
+}
+
+/*Button "zum Homescreen" kontakt.html*/
+.small {
+    margin-top: 50px;
+}
+
+body{
+    background: url(pictures/home/backgroundHome.png);
+}
+
+@media screen and (max-width:480px) {
+    .small {
+        margin-top: 10px;
+    }
+    .main{
+        padding: 2px;
+        margin: 10 2px;
+    }
+}
+
+h1{
+    font-family: "Oswald";
 }

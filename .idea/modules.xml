@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/GewährleistungsBAUM.iml" filepath="$PROJECT_DIR$/.idea/GewährleistungsBAUM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/LexClaim.iml" filepath="$PROJECT_DIR$/.idea/LexClaim.iml" />
     </modules>
   </component>
 </project>
